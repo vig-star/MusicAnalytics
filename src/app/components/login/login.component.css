@@ -1,0 +1,22 @@
+#loginModal {
+  background-color: #12FFF2;
+  border: 1px solid #ccc;
+  align-content: center;
+}
+
+.loginButton {
+  text-align: center;
+  background-color: #FFFFF8;
+  padding: 1%;
+  height: 5%;
+  align-content: center;
+}
+
+.loginButton:hover {
+  background-color: #15910f;
+}
+
+.loginContainer {
+  align-content: center;
+  text-align: center;
+}
