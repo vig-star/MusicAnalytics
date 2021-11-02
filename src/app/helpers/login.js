@@ -32,7 +32,7 @@ router.get('/', (req, res) => {
 
     res.redirect(authorize + querystring.stringify({
       response_type: 'code',
-      client_id: '2b95b0dd175048e8bee450cdf2f4b94c',
+      client_id: process.env.CLIENT_ID || '2b95b0dd175048e8bee450cdf2f4b94c',
       scope: scope,
       redirect_uri: redirect_uri,
       state, state
