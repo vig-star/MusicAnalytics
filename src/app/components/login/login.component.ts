@@ -1,21 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {ModalDirective} from 'angular-bootstrap-md';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  error: string
+  error: string;
   validatingForm: FormGroup;
-  title = "Login to Spotify";
+  title = 'Login to Spotify';
 
   ngOnInit() {
     this.validatingForm = new FormGroup({
       loginFormModalEmail: new FormControl('', Validators.email),
-      loginFormModalPassword: new FormControl('', Validators.required)
+      loginFormModalPassword: new FormControl('', Validators.required),
     });
   }
 
@@ -28,7 +27,7 @@ export class LoginComponent implements OnInit {
   }
 
   requestAuthorization() {
-    window.location.href = "http://localhost:8080/login"
+    window.location.href = 'http://localhost:8000/login';
     /* let clientId = "2b95b0dd175048e8bee450cdf2f4b94c";
     let clientSecret = "";
     let authorize = "https://accounts.spotify.com/authorize";
@@ -44,5 +43,3 @@ export class LoginComponent implements OnInit {
     window.location.href = url; */
   }
 }
-
-
