@@ -27,7 +27,7 @@ app.use(
 //     },
 //   })
 // );
-
+app.use("/home", require("./routes/home"));
 app.use("/login", require("./routes/login"));
 app.use("/callback", require("./routes/callback"));
 app.use("/logout", require("./routes/logout"));

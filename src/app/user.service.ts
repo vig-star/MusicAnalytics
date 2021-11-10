@@ -7,7 +7,7 @@ import { retry, catchError } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class UserService {
-  private SERVER_URL = 'http://localhost:8000';
+  private SERVER_URL = 'http://localhost:8000/home';
 
   constructor(private httpClient: HttpClient) {}
 
