@@ -2,6 +2,7 @@ const express = require("express");
 const session = require("express-session");
 const cors = require("cors");
 const config = require("./config");
+const cookieParser = require("cookie-parser");
 
 const app = express();
 app.use(express.json());
@@ -11,6 +12,10 @@ app.use(
     origin: true,
     credentials: true,
   })
+);
+
+app.use(
+  cookieParser()
 );
 
 // // configure sessions
