@@ -2,9 +2,7 @@ const express = require("express");
 const router = express.Router();
 const request = require("request");
 const config = require("../config");
-const cors = require("cors");
 const querystring = require("querystring");
-const cookieParser = require("cookie-parser");
 
 let generateCookie = function () {
   let result = "";
@@ -29,10 +27,11 @@ router.get("/", (req, res) => {
   res.redirect(
     authorize +
       querystring.stringify({
-        response_type: "code",
         client_id: config.clientID,
-        scope: scope,
         redirect_uri: redirect_uri,
+        scope: scope,
+        response_type: 'code',
+        show_dialog: true,
         state: config.state,
       })
   );
