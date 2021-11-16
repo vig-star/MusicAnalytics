@@ -1,8 +1,8 @@
 <div class="navbar">
   <p>Hello there!</p>
-  User: {{user.email}}
+  <div> User: {{user.email}} </div>
   <ul class="navButton" routerLink="/home"> Home </ul>
-  <ul class="navButton" routerLink="/login">Login</ul>
+  <ul *ngIf="user['email'] == 'not logged in'" class="navButton" routerLink="/login">Login</ul>
   <ul class = "navButton" (click)="logout()">Logout</ul>
 </div>
 

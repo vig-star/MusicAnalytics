@@ -9,7 +9,7 @@ import { UserService } from '../../user.service';
 })
 
 export class HomeComponent implements OnInit {
-  user = {'email':'nathan.wang2323@gmail.com'}
+  user = {'email': 'not logged in'}
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
     let left = (screen.width/2)-(700/2);
     let top = (screen.height/2)-(700/2);
     const spotifyLogoutWindow = window.open(url, 'Spotify Logout', 'width=700,height=700,top='+top+',left='+left);
-    setTimeout(() => spotifyLogoutWindow.close(), 2000)
+    setTimeout(() => spotifyLogoutWindow.close(), 2000);
+    window.location.href = 'http://localhost:8000/logout';
   }
 }

@@ -5,11 +5,9 @@ const config = require("../config");
 const cors = require("cors");
 const querystring = require("querystring");
 const cookieParser = require("cookie-parser");
+const json = require("json");
 
 router.get("/", (req, res) => {
-  console.log(req.query.code);
-  console.log(req.query.state);
-
   let code = req.query.code || null;
   let state = req.query.state || null;
   let cookie = req.cookies ? req.cookies[config.stateKey] : null;
@@ -38,26 +36,13 @@ router.get("/", (req, res) => {
            if (!error && response.statusCode === 200) {
              config.access_token = body.access_token;
              config.refresh_token = body.refresh_token;
-             console.log(config.access_token);
-             console.log(config.refresh_token);
              res.redirect(`http://localhost:${config.clientPort}`);
-             request (
-             {
-               method: "GET",
-               uri: 'https://api.spotify.com/v1/me',
-               headers: { 'Authorization': 'Bearer ' + config.access_token },
-               json: true,
-             },
-             (error, response, body) => {
-               console.log(body);
-             });
            } else {
              console.log("error");
              console.log(response.statusCode);
              console.log(response.headers);
            }
-         }
-       );
+         });
   } else {
     console.log("Cookie mismatch or null state");
   }
