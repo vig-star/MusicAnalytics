@@ -24,6 +24,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
+    "json": "^11.0.0",
     "mdbootstrap": "^4.20.0",
     "ngx-bootstrap": "^7.1.0",
     "request": "^2.88.2",
