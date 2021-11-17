@@ -29,4 +29,8 @@ export class LoginComponent implements OnInit {
   requestAuthorization() {
     window.location.href = 'http://localhost:8000/login';
   }
+
+  requestAuthorizationGoogle() {
+    window.location.href = 'http://localhost:8000/loginYoutube';
+  }
 }

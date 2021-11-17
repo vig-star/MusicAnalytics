@@ -34,7 +34,9 @@ app.use(
 // );
 app.use("/home", require("./routes/home"));
 app.use("/login", require("./routes/login"));
+app.use("/loginYoutube", require("./routes/loginGoogle"));
 app.use("/callback", require("./routes/callback"));
+app.use("/callbackGoogle", require("./routes/callbackGoogle"));
 app.use("/logout", require("./routes/logout"));
 
 app.listen(config.serverPort, () =>
